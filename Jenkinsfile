@@ -2,22 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('stop filebeat') {
+        stage('Maven Build') {
             steps {
-               sh 'sudo systemctl stop filebeat'
-               sh 'sudo systemctl stop logstash'
+                sh 'echo "building maven artifact"'
             }
         }
-        stage('update filebeat') {
+        stage('push to nexus') {
             steps {
-                sh 'sudo yum update -y filebeat'
-                sh 'sudo yum update -y logstash-6.5*'
+                sh 'echo "pushed and tagged"'
             }
         }
-        stage('start filebeat') {
+        stage('start LS docker') {
             steps {
-                sh 'sudo systemctl start filebeat'
-                sh 'sudo systemctl start logstash'
+                sh 'echo "starting docker container..."'
             }
         }
     }
