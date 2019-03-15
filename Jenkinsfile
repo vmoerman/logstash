@@ -2,19 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Maven Build') {
+        stage('start docker container') {
             steps {
-                sh 'echo "building maven artifact"'
+                sh 'echo "testing"'
             }
         }
-        stage('push to nexus') {
+        stage('test new conf in docker') {
             steps {
-                sh 'echo "pushed and tagged"'
+                sh 'echo "tagged"'
             }
         }
-        stage('start LS docker') {
+        stage('tag!') {
             steps {
-                sh 'echo "starting docker container..."'
+                sh 'echo "tagged..."'
+            }
+        }
+        stage('') {
+            steps {
+                sh 'echo "tagged..."'
             }
         }
     }
