@@ -1,8 +1,7 @@
 pipeline {
    
-    agent {
-      any
-    }
+    agent any
+   
     stages {
         stage('testconf') {
             steps {
