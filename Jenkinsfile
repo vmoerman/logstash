@@ -1,16 +1,12 @@
 pipeline {
    
     agent {
-      docker {
-         image 'logstash:6.6.2'
-         args '-v /home/victor/logstash/conf.d/:/usr/share/logstash/pipeline/'
-         args '--config.reload.automatic'
-      }
+      any
     }
     stages {
         stage('testconf') {
             steps {
-                sh ''
+                sh 'docker run -v /home/victor/logstash/conf.d/:/usr/share/logstash/pipelines/ logstash:6.6.2 -t'
             }
         }
         stage('test new conf in docker') {
