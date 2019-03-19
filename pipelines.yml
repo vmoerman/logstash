@@ -1,0 +1,44 @@
+# This file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+- pipeline.id: moka
+  path.config: "/etc/logstash/conf.d/logstash_moka.conf"
+- pipeline.id: jdbc
+  path.config: "/etc/logstash/conf.d/logstash_jdbc.conf"
+- pipeline.id: metricbeat
+  path.config: "/etc/logstash/conf.d/logstash_metricbeat.conf"
+- pipeline.id: GIS
+  path.config: "/etc/logstash/conf.d/logstash_GIS.conf"
+- pipeline.id: cronos
+  path.config: "/etc/logstash/conf.d/logstash_cronos.conf"
+#- pipeline.id: cronos_test
+#  path.config: "/etc/logstash/conf.d/logstash_newcronos.conf"
+- pipeline.id: whd
+  path.config: "/etc/logstash/conf.d/logstash_whd.conf"
+- pipeline.id: esbmon]\
+  path.config: "/etc/logstash/conf.d/logstash_esbmon.conf"
+- pipeline.id: eloket
+  path.config: "/etc/logstash/conf.d/logstash_eLoket.conf"
+  pipeline.workers: 1
+  pipeline.batch.size: 300
+- pipeline.id: vesta
+  path.config: "/etc/logstash/conf.d/logstash_vesta.conf"
+- pipeline.id: AIF
+  path.config: "/etc/logstash/conf.d/Logstash_AIF.conf"
+#- pipeline.id: jmx
+#  path.config: "/etc/logstash/conf.d/jmx_inputs.conf"
+#- pipeline.id: ftp
+#  path.config: "/etc/logstash/conf.d/logstash_ftp.conf"
+#- pipeline.id: respons
+#  path.config: "/etc/logstash/conf.d/logstash_respons.conf"
+#- pipeline.id: MoKarespons
+#  path.config: "/etc/logstash/conf.d/logstash_MoKarespons.conf"
+#- pipeline.id: eloketproddata
+#  path.config: "/etc/logstash/conf.d/logstash_eLoketPRODdata.conf"
+- pipeline.id: ems
+  path.config: "/etc/logstash/conf.d/logstash_ems.conf"
+- pipeline.id: eloket_FE
+  path.config: "/etc/logstash/conf.d/logstash_eloketFE.conf"
+- pipeline.id: njams
+  path.config: "/etc/logstash/conf.d/logstash_njams.conf"
