@@ -1,25 +1,19 @@
 pipeline {
-    agent any
-
+   
+    agent {
+      docker {
+          image 'logstash:6.6.2'
+      }
+    }
     stages {
-        stage('start docker container') {
+        stage('testconf') {
             steps {
-                sh 'echo "testing"'
+                sh 'mvn -B'
             }
         }
         stage('test new conf in docker') {
             steps {
                 sh 'echo "tagged"'
-            }
-        }
-        stage('tag!') {
-            steps {
-                sh 'echo "tagged..."'
-            }
-        }
-        stage('') {
-            steps {
-                sh 'echo "tagged..."'
             }
         }
     }
