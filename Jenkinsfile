@@ -12,7 +12,8 @@ pipeline {
         }
         stage('tag git release') {
             steps {
-                sh 'echo "tagged"'
+               sh 'git tag v1.0'
+               sh 'git push v1.0'
             }
         }
     }
