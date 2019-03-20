@@ -10,11 +10,5 @@ pipeline {
                sh 'docker run -v /home/victor/logstash/conf.d/3/:/usr/share/logstash/pipeline/ logstash:6.6.2 -t'
             }
         }
-        stage('tag git release') {
-            steps {
-               sh 'git tag v2.0'
-               sh 'git push v2.0'
-            }
-        }
     }
 }
