@@ -10,10 +10,10 @@ pipeline {
                sh 'docker run -v /home/victor/logstash/conf.d/3/:/usr/share/logstash/pipeline/ logstash:6.6.2 -t'
             }
         }
-        stage('tag git release') {
-            steps {
-                sh 'echo "tagged"'
-            }
-        }
+       stage() {
+          steps {
+            sh 'echo "pushing conf to UAT"'
+          }
+       }
     }
 }
