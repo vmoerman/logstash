@@ -50,4 +50,4 @@ SERVICE_DESCRIPTION="logstash"
 # between the lines beginning with `read` and `EOM`, and uncomment those lines.
 ###
 ## read -r -d '' PRESTART << EOM
-## EOM
+EOM
