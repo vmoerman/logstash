@@ -10,7 +10,7 @@ pipeline {
                sh 'docker run -v /home/victor/logstash/conf.d/$file/:/usr/share/logstash/pipeline/ logstash:6.6.2 -t'
             }
         }
-       stage() {
+       stage('bla') {
           steps {
             sh 'echo "pushing conf to UAT"'
           }
