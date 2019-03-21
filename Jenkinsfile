@@ -4,11 +4,8 @@ pipeline {
    
     stages {
         stage('testconf') {
-           environment {
-               LASTFILE = (sh 'file=$(ls conf.d/ -t | head -1)')
-           }
             steps {
-               sh 'docker run -v /home/victor/logstash/conf.d/env.LASTFILE:/usr/share/logstash/pipeline/ logstash:6.6.2 -t'
+               sh 'lastfile=$(ls conf.d/ -t | head -1) \ docker run -v /home/victor/logstash/conf.d/(($lastfile)):/usr/share/logstash/pipeline/ logstash:6.6.2 -t'
             }
         }
        stage('bla') {
