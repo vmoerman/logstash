@@ -5,8 +5,7 @@ pipeline {
     stages {
         stage('testconf') {
             steps {
-               sh 'cd /etc/logstash'
-               sh 'pwd'
+               sh 'sudo mv -f conf.d/* /etc/logstash/conf.d/
                sh 'sudo /usr/share/logstash/bin/logstash -t --path.settings /etc/logstash/'
             }
         }
