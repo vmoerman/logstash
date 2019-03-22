@@ -1,6 +1,6 @@
 #! /bin/bash
  VERSION_MODE=$1  
- ENV_TAG_PREFIX=QA_V
+ ENV_TAG_PREFIX=V
  # "major": 1,  
  # "minor": 0,  
  # "revision": 0,  
