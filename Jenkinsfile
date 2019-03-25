@@ -2,7 +2,7 @@ pipeline {
 
     agent any
     environment {
-        SAUCE_ACCESS = credentials('b26beb60-3b99-46b1-806a-d1d4d01b5a6c')
+        SRC = credentials('github')
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
         }
        stage('tag em') {
           steps {
-            sh 'git remote set-url origin "https://"$SAUCE_ACCESS"@github.com/vmoerman/logstash"'
+            sh 'git remote set-url origin "https://"$SRC_USR":"$SRC_PSW"@github.com/vmoerman/logstash"'
             sh 'git tag "$BUILD_NUMBER"'
             sh 'sudo git push origin --tags'
           }
