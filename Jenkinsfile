@@ -2,7 +2,7 @@ pipeline {
 
     agent any
     environment {
-        SAUCE_ACCESS = credentials('sauce-lab-dev')
+        SAUCE_ACCESS = credentials('github')
     }
 
     stages {
