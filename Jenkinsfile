@@ -12,7 +12,7 @@ pipeline {
        stage('tag em') {
           steps {
             sh 'git tag "$BUILD_NUMBER"'
-            sh 'sudo git push "$BUILD_NUMBER"'
+            sh 'sudo git push origin "$BUILD_NUMBER"'
           }
        }
     }
