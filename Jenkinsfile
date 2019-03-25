@@ -11,7 +11,7 @@ pipeline {
         }
        stage('bla') {
           steps {
-            sh 'echo "$EXECUTOR_NUMBER"'
+            sh 'echo "$BUILD_TAG"'
           }
        }
     }
