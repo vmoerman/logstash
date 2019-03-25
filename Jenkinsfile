@@ -12,7 +12,7 @@ pipeline {
        stage('tag em') {
           steps {
             sh 'git tag "$BUILD_NUMBER"'
-            sh 'git push origin "$BUILD_NUMBER"'
+            sh '/etc/logstash/gittag.sh'
           }
        }
     }
