@@ -12,7 +12,7 @@ pipeline {
        stage('tag em') {
           steps {
             sh 'git tag "$BUILD_NUMBER"'
-            sh 'sudo git remove -v'
+            sh 'sudo git remote -v'
             sh 'sudo git push origin "$BUILD_NUMBER"'
           }
        }
