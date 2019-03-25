@@ -1,6 +1,9 @@
 pipeline {
 
     agent any
+    environment {
+        SAUCE_ACCESS = credentials('sauce-lab-dev')
+    }
 
     stages {
         stage('testconf') {
@@ -11,9 +14,9 @@ pipeline {
         }
        stage('tag em') {
           steps {
+            sh 'git remote set-url origin "https://"$SAUCE_ACCESS"@github.com/vmoerman/logstash'
             sh 'git tag "$BUILD_NUMBER"'
-            sh 'sudo git remote -v'
-            sh 'sudo git push origin "$BUILD_NUMBER"'
+            sh 'sudo git push origin --tags'
           }
        }
     }
