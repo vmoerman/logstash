@@ -11,7 +11,7 @@ pipeline {
         }
        stage('bla') {
           steps {
-            sh 'echo "pushing conf to UAT"'
+            sh 'echo "$EXECUTOR_NUMBER"'
           }
        }
     }
