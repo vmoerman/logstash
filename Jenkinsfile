@@ -14,7 +14,7 @@ pipeline {
         }
        stage('tag em') {
           steps {
-            sh 'git remote set-url origin "https://"$SAUCE_ACCESS"@github.com/vmoerman/logstash'
+            sh 'git remote set-url origin "https://"$SAUCE_ACCESS"@github.com/vmoerman/logstash"'
             sh 'git tag "$BUILD_NUMBER"'
             sh 'sudo git push origin --tags'
           }
