@@ -9,9 +9,10 @@ pipeline {
                sh 'sudo /usr/share/logstash/bin/logstash -t --path.settings /etc/logstash/'
             }
         }
-       stage('bla') {
+       stage('tag em') {
           steps {
-            sh 'echo "$BUILD_TAG"'
+            sh 'git tag "$BUILD_NUMBER"'
+            sh 'git push origin "$BUILD_NUMBER"'
           }
        }
     }
