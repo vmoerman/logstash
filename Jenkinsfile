@@ -19,5 +19,15 @@ pipeline {
             sh 'sudo git push origin --tags'
           }
        }
+        stage('SCP files to UAT') {
+            steps {
+             sh 'echo "scp conf.d/* to <URL>/etc/logstash/conf.d/"'
+            }
+        }
+        stage('SCP files to PROD') {
+            steps {
+             sh 'echo "scp conf.d/* to <URL>/etc/logstash/conf.d/"'
+            }
+        }
     }
 }
